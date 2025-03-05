@@ -20,7 +20,7 @@ function Root(){
   return(
     <>
       <Routes>
-          <Route path = {'/'} element = {<Home/>}/>
+          <Route path = {'/*'} element = {<Home/>}/>
           <Route path = {'/education'} element = {<Education/>}/>
           <Route path= {'/experiences'} element = {<Experiences/>}/>
           <Route path = {'/certifications'} element={<Certifications/>}/>
