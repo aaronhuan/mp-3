@@ -8,15 +8,15 @@ import Achievements from "./components/Achievements";
 import Projects from "./components/Projects";
 function Root(){
   //piazzza
-  // const location = useLocation();
-  // const editedpath = location.pathname.slice(1); //remove / 
-  // useEffect(()=>{
-  //   if (editedpath ===""){
-  //     document.title="Home | Resume";
-  //   }else{
-  //     document.title=editedpath.charAt(0).toUpperCase() + editedpath.slice(1) +" | Resume"; //charat up char 0 and concat the rest
-  //   }
-  // },[editedpath])
+  const location = useLocation();
+  const editedpath = location.pathname.slice(1); //remove / 
+  useEffect(()=>{
+    if (editedpath ===""){
+      document.title="Home | Resume";
+    }else{
+      document.title=editedpath.charAt(0).toUpperCase() + editedpath.slice(1) +" | Resume"; //charat up char 0 and concat the rest
+    }
+  },[editedpath])
   return(
     <>
       <Routes>
