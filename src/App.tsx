@@ -9,14 +9,14 @@ import Projects from "./components/Projects";
 function Root(){
   //piazzza
   const location = useLocation();
-  const pathname = location.pathname.slice(1); //remove / 
+  const editedpath = location.pathname.slice(1); //remove / 
   useEffect(()=>{
-    if (pathname ===""){
+    if (editedpath ===""){
       document.title="Home | Resume";
     }else{
-      document.title=pathname.charAt(0).toUpperCase() + pathname.slice(1) +" | Resume"; //charat up char 0 and concat the rest
+      document.title=editedpath.charAt(0).toUpperCase() + editedpath.slice(1) +" | Resume"; //charat up char 0 and concat the rest
     }
-  },[pathname])
+  },[editedpath])
   return(
     <>
       <Routes>
@@ -36,17 +36,5 @@ const router = createBrowserRouter([
 ]);
 
 export default function App() {
-  // //from piazza
-  // const currentPath=useLocation();
-  // let lastValue=Object.values(currentPath).pop() || "";
-  // lastValue = lastValue.charAt(0).toUpperCase() + lastValue.slice(1);
-  // useEffect(()=>{
-  //     if(lastValue==="/"){
-  //         document.title="Home | Resume";
-  //     }else {
-  //         document.title=lastValue+" | Resume";
-  //     }
-  // },[lastValue]);
-
   return <RouterProvider router = {router}/>
 }
